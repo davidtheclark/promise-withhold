@@ -1,7 +1,7 @@
 {
   "name": "withhold-promise",
   "version": "0.1.0",
-  "description": "Withhold the resolution or rejection of a Promise at least some amount of time.",
+  "description": "Withhold the settlement (fulfillment or rejection) of a Promise at least some amount of time.",
   "main": "index.js",
   "scripts": {
     "test": "ava test.js"

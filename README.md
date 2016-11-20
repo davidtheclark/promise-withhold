@@ -1,8 +1,8 @@
 # promise-withhold
 
-Withhold the resolution or rejection of a Promise at least some amount of time.
+Withhold the settlement (fulfillment or rejection) of a Promise at least some amount of time.
 
-This sometimes comes in handy. One use-case is when you have a process that may finish immediately or may take a few seconds, but you don't want your UI to flash a temporary loading state for fewer than 1 second, because a crazy flash would be more confusing than helpful to the user — would even look like a bug.
+This sometimes comes in handy. One use-case is when you have a process that may finish immediately or may take a few seconds, but you don't want your UI to flash a temporary loading state for less than 1 second, because a super-fast flash would be more confusing than helpful to the user — might even look like a bug.
 
 ## Installation
 
@@ -15,12 +15,12 @@ npm install withhold-promise
 ```js
 var withholdPromise = require('withhold-promise');
 
-withholdPromise(performProcessOfUnknownLength, 100)
+withholdPromise(performProcessOfUnknownLength, 1000)
   .then((value) => {
-    // Won't arrive here until *at least* 100ms have elapsed
+    // Won't arrive here until *at least* 1000ms have elapsed
   })
   .catch((err) => {
-    // Also won't arrive here until *at least* 100ms have elapsed
+    // Also won't arrive here until *at least* 1000ms have elapsed
   });
 ```
 
@@ -28,7 +28,7 @@ withholdPromise(performProcessOfUnknownLength, 100)
 
 ### promiseWithhold(yourPromise, time)
 
-Returns a Promise that resolves or rejects the same as `yourPromise` but no earlier than `time`.
+Returns a Promise that settles (resolves or rejects) the same way as `yourPromise` but no sooner than `time`.
 
 #### yourPromise
 
@@ -38,4 +38,4 @@ Type: `Promise`
 
 Type: `number`
 
-Time in milliseconds, just like you'd feed to `setTimeout`.
+Time in milliseconds (as you'd feed to `setTimeout`) that the Promise's settlement should be withheld.
