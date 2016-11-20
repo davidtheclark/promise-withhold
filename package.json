@@ -1,0 +1,22 @@
+{
+  "name": "withhold-promise",
+  "version": "0.1.0",
+  "description": "Withhold the resolution or rejection of a Promise at least some amount of time.",
+  "main": "index.js",
+  "scripts": {
+    "test": "ava test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidtheclark/withhold-promise.git"
+  },
+  "author": "David Clark",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/davidtheclark/withhold-promise/issues"
+  },
+  "homepage": "https://github.com/davidtheclark/withhold-promise#readme",
+  "devDependencies": {
+    "ava": "^0.17.0"
+  }
+}
