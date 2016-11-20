@@ -1,5 +1,7 @@
 # promise-withhold
 
+[![Build Status](https://travis-ci.org/davidtheclark/withhold-promise.svg?branch=master)](https://travis-ci.org/davidtheclark/withhold-promise)
+
 Withhold the settlement (fulfillment or rejection) of a Promise at least some amount of time.
 
 This sometimes comes in handy. One use-case is when you have a process that may finish immediately or may take a few seconds, but you don't want your UI to flash a temporary loading state for less than 1 second, because a super-fast flash would be more confusing than helpful to the user — might even look like a bug.
